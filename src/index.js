@@ -27,7 +27,6 @@ app.post('/add', (req, res) => {
       message: 'Invalid data types',
     });
   }
-  //   console.log(firstNum + ' ' + secondNum );
   if (firstNum < minLimit || secondNum < minLimit) {
     res.send({
       status: 'error',
