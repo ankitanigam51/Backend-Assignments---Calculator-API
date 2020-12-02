@@ -19,11 +19,18 @@ let num1 = 10;
 let num2 = 5;
 
 app.post('/add', (req,res) => {
+    if(req.body.num1 > 1000000 && req.body.num2 > 1000000){
+        res.send("Overflow")
+    }
+    else if(req.body.num1 > "" && req.body.num2 > ""){
+        res.send("Invalid data types")
+    }else {
     res.send({
         status: "success "|" failure "|" error",
         message: "the sum of given two numbers",
         sum: num1+num2
         })
+    }
 })
 
 app.post('/sub', (req,res) => {
@@ -35,11 +42,18 @@ app.post('/sub', (req,res) => {
 })
 
 app.post('/multiply', (req,res) => {
+    if(req.body.num1 < 1000000 && req.body.num2 < 1000000){
+        res.send("Overflow")
+    }
+    else if(req.body.num1 > "" && req.body.num2 > ""){
+        res.send("Invalid data types")
+    }else {
     res.send({
         status: "success"|"failure"|"error",
         message: "The product of given numbers",
         result: num1*num2
         })
+    }
 })
 
 app.post('/divide',(req,res) => {
