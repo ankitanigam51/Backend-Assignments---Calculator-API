@@ -46,7 +46,7 @@ app.post('/add', (req, res) => {
     res.send({
       status: 'success',
       message: 'the sum of given two numbers',
-      sum: firstNum + secondNum,
+      sum: firstNum+secondNum,
     });
   }
 });
